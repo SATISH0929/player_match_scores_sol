@@ -66,7 +66,7 @@ app.get('/players/:playerId/', async (request, response) => {
       player_details
     WHERE
       player_id = ${playerId}`
-  const player = await database.all(getPlayerQuery)
+  const player = await database.get(getPlayerQuery)
   response.send(convertPlayerDbObjectToResponseObject(player))
 })
 
